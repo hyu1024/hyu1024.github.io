@@ -119,7 +119,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/04/04/Database/28.png">
 <meta property="og:image" content="http://yoursite.com/2020/04/04/Database/29.png">
 <meta property="article:published_time" content="2020-04-04T21:12:27.002Z">
-<meta property="article:modified_time" content="2020-04-04T21:43:48.460Z">
+<meta property="article:modified_time" content="2020-04-04T21:48:15.429Z">
 <meta property="article:author" content="H Yu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/04/04/Database/01.png">
@@ -407,7 +407,7 @@
 <p>​        (You don’t want to lose it when you close the editor)</p>
 <p><strong>Solutions:</strong></p>
 <p>​    Save to a file!</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">XML, UML:</span><br><span class="line">	<span class="tag">&lt;<span class="name">student</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">module</span>&gt;</span></span><br><span class="line">			Module name</span><br><span class="line">		<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">		…</span><br><span class="line">	<span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">XML, UML:</span><br><span class="line">  <span class="tag">&lt;<span class="name">student</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span></span><br><span class="line">      Module name</span><br><span class="line">    <span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>A Typical Problem</strong></p>
 <ul>
 <li>Booking a flight<ul>
@@ -487,7 +487,7 @@ a \in A   (Element~of)</script><p>Sets can also be written as follows:</p>
 <p>​    Equal to: <script type="math/tex">(A \cup B) \backslash(A \cap B)</script> or <script type="math/tex">(A \backslash B) \cup (B \backslash A).</script></p>
 <p>An ordered pair is a pair of elements whose order is maintained. </p>
 <p>​    Written <script type="math/tex">(a,~b)</script> </p>
-<p>A tuple is a list of elements: <script type="math/tex">(a,~b,~c,~d … )</script></p>
+<p>A tuple is a list of elements: <script type="math/tex">(a,~b,~c,~d ... )</script></p>
 <p>An <strong>n-tuple</strong> is a tuple with n elements</p>
 <p>The Cartesian product of A and B, is the set whose members are all possible ordered pairs (a, b) where a is a member of A and b is a member of B.</p>
 <p>​    Written<script type="math/tex">A \times B</script></p>
@@ -558,7 +558,7 @@ a \in A   (Element~of)</script><p>Sets can also be written as follows:</p>
 <p>Other commands include “index”, “view”, …</p>
 <h2 id="SQL-Select"><a href="#SQL-Select" class="headerlink" title="SQL - Select"></a>SQL - Select</h2><p>Query Table for information</p>
 <p>Structure:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Select A1, A2, A3, …    -- &lt;-- What</span><br><span class="line">		from	R1, R2, R3, … -- &lt;-- From these relations</span><br><span class="line">		where condition ;    -- &lt;--with this condition</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Select A1, A2, A3, ...    -- &lt;-- What</span><br><span class="line">    from    R1, R2, R3, ... -- &lt;-- From these relations</span><br><span class="line">    where condition ;    -- &lt;--with this condition</span><br></pre></td></tr></table></figure>
 <p>SQL returns a schema (for a table) and so a table which is defined by the attributes selected in the select statement.</p>
 <h2 id="SQLBolt"><a href="#SQLBolt" class="headerlink" title="SQLBolt"></a><strong>SQLBolt</strong></h2><div class="table-container">
 <table>
@@ -1648,7 +1648,7 @@ a \in A   (Element~of)</script><p>Sets can also be written as follows:</p>
 <p><strong>Tip:</strong> For an overview of the available data types, go to our complete Data Type Reference.</p>
 <p>The following example creates a table called “Persons” that contains five columns: PersonID, LastName, FirstName, Address, and City:</p>
 <p><strong>Example</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Persons (</span><br><span class="line">  	PersonID int,</span><br><span class="line">  	LastName varchar(255),</span><br><span class="line">  	FirstName varchar(255),</span><br><span class="line">  	Address varchar(255),</span><br><span class="line">  	City varchar(255) </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Persons (</span><br><span class="line">      PersonID int,</span><br><span class="line">      LastName varchar(255),</span><br><span class="line">      FirstName varchar(255),</span><br><span class="line">      Address varchar(255),</span><br><span class="line">      City varchar(255) </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p><strong>Create Table Using Another Table</strong></p>
 <p>A copy of an existing table can also be created using CREATE TABLE.</p>
 <p>The new table gets the same column definitions. All columns or specific columns can be selected.</p>
@@ -2721,7 +2721,7 @@ Many ~to~Many</script><p>Notice how all hierarchies are of this form:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE STUDENT(</span><br><span class="line">    STUDENTID SERIAL PRIMARY KEY,</span><br><span class="line">    NAME VARCHAR( 30 ),</span><br><span class="line">    COURSEID INT REFERENCES COURSE( ID )  </span><br><span class="line">) ;</span><br></pre></td></tr></table></figure>
 <p>Notice how the keyword “REFERENCES” has been used to define a foreign key. </p>
 <p>Insert some values into both tables</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO COURSE</span><br><span class="line">	( COURSENAME, DETAILS ) </span><br><span class="line">VALUES </span><br><span class="line">	(&#39;MSc&#39;, &#39;The MSc CS Course&#39; ), </span><br><span class="line">	( &#39;BSc&#39;, &#39;The BSc CS Course&#39; ) ;</span><br><span class="line"></span><br><span class="line">INSERT INTO STUDENT</span><br><span class="line">	( NAME, COURSEID ) </span><br><span class="line">VALUES </span><br><span class="line">	( &#39;S1&#39;, 1 ),</span><br><span class="line">    ( &#39;S2&#39;, 2 ), </span><br><span class="line">    ( &#39;S3&#39;, 1 ) ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO COURSE</span><br><span class="line">    ( COURSENAME, DETAILS ) </span><br><span class="line">VALUES </span><br><span class="line">    (&#39;MSc&#39;, &#39;The MSc CS Course&#39; ), </span><br><span class="line">    ( &#39;BSc&#39;, &#39;The BSc CS Course&#39; ) ;</span><br><span class="line"></span><br><span class="line">INSERT INTO STUDENT</span><br><span class="line">    ( NAME, COURSEID ) </span><br><span class="line">VALUES </span><br><span class="line">    ( &#39;S1&#39;, 1 ),</span><br><span class="line">    ( &#39;S2&#39;, 2 ), </span><br><span class="line">    ( &#39;S3&#39;, 1 ) ;</span><br></pre></td></tr></table></figure>
 <p><strong>WARNING:</strong> Insert will fail if you use double quotes in postgres.</p>
 <p>The tables now contain: </p>
 <p>postgis_test=# SELECT * FROM STUDENT;</p>
