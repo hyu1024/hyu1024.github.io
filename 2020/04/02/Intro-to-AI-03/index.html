@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/04/02/Intro-to-AI-03/11.png">
 <meta property="og:image" content="http://yoursite.com/2020/04/02/Intro-to-AI-03/12.png">
 <meta property="article:published_time" content="2020-04-02T20:02:27.850Z">
-<meta property="article:modified_time" content="2020-04-04T00:09:13.564Z">
+<meta property="article:modified_time" content="2020-04-04T10:57:26.456Z">
 <meta property="article:author" content="H Yu">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Bayes">
@@ -448,18 +448,18 @@ P(H \mid E) = \cfrac{P(H) \cdot P(E \mid H)}{P(E)}</script><h2 id="Example"><a h
 <p>$\therefore \: $ </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-        &P(raining \mid \hat {umbrella}) \\\\
-= \quad &P(raining) \cdot P(\hat{umbrella}\mid raining) \: / \: P(\hat{umbrella})\\\\
-= \quad &0.4 \times 0.1  \: / \:  P(\hat{umbrella})\\\\
+        &P(raining \mid \hat {umbrella}) \\
+= \quad &P(raining) \cdot P(\hat{umbrella}\mid raining) \: / \: P(\hat{umbrella})\\
+= \quad &0.4 \times 0.1  \: / \:  P(\hat{umbrella})\\
 \approx \quad &0.08
 \end{aligned}</script><script type="math/tex; mode=display">
 \begin{aligned}
-P(\hat{umbrella}) &\quad= P(raining) \cdot P(\hat{umbrella} \mid raining) + P(\hat{raining})\cdot P(\hat{umbrella}\mid \hat{raining}) \\\\
-&\quad= 0.4 \times 0.1 + 0.6 \times 0.8 \\\\
+P(\hat{umbrella}) &\quad= P(raining) \cdot P(\hat{umbrella} \mid raining) + P(\hat{raining})\cdot P(\hat{umbrella}\mid \hat{raining}) \\
+&\quad= 0.4 \times 0.1 + 0.6 \times 0.8 \\
 &\quad= 0.52
 \end{aligned}</script><h2 id="Bayes-Theorem"><a href="#Bayes-Theorem" class="headerlink" title="Bayes Theorem"></a>Bayes Theorem</h2><script type="math/tex; mode=display">
 \begin{aligned}
-P(E) &\quad = P(H) \cdot P(E \mid H) + P(\hat{H})\cdot P(E\mid \hat{H}) \\\\
+P(E) &\quad = P(H) \cdot P(E \mid H) + P(\hat{H})\cdot P(E\mid \hat{H}) \\
 &\quad= P(H,E) + P(\hat{H},E)
 \end{aligned}</script><script type="math/tex; mode=display">
 P(H\mid E) = \cfrac {P(H)P(E\mid H)}{P(H) \cdot P(E \mid H) + P(\hat{H})\cdot P(E\mid \hat{H})}</script><h2 id="Example-2-Drug-Testing"><a href="#Example-2-Drug-Testing" class="headerlink" title="Example 2: Drug Testing"></a>Example 2: Drug Testing</h2><p>Suppose that a drug test will produce 99% true positive results for drug users and 99% true negative results for non-drug users. Suppose that 0.5% of people are users of the drug. <strong>What is the probability that a randomly selected individual with a positive test is a drug user? What is the probability that a randomly selected individual with a negative test is a drug user?</strong></p>
@@ -722,12 +722,12 @@ P(H\mid E) = \cfrac {P(H)P(E\mid H)}{P(H) \cdot P(E \mid H) + P(\hat{H})\cdot P(
 </div>
 <script type="math/tex; mode=display">
 \begin{aligned}
- &P(cavity \mid \hat{wash}, pain) \\\\
-= \quad &\cfrac{P(cavity) \cdot P(\hat{wash}, pain \mid cavity)}{P(\hat{wash}, pain)} \\\\
+ &P(cavity \mid \hat{wash}, pain) \\
+= \quad &\cfrac{P(cavity) \cdot P(\hat{wash}, pain \mid cavity)}{P(\hat{wash}, pain)} \\
 = \quad &  \cfrac{P(cavity)\cdot P(\hat{wash}, pain\mid cavity)}{(P(cavity) \cdot P(\hat{wash}, pain \mid cavity) + P(\hat{cavity}) \cdot P(\hat{wash}, pain\mid \hat{cavity}))}
-\\\\
+\\
 = \quad & \cfrac{\cfrac{3}{6} \times \cfrac{2}{3}}
-   {\cfrac{3}{6} \times \cfrac{2}{3} + \cfrac{3}{6} \times 0}  \\\\
+   {\cfrac{3}{6} \times \cfrac{2}{3} + \cfrac{3}{6} \times 0}  \\
 = \quad & 100\%
 \end{aligned}</script><ul>
 <li><strong>Downside</strong>: Number of possible combinations of input attributes can become very large</li>
@@ -855,7 +855,7 @@ P(c \mid f_1, ..., f_n) = \alpha \cdot P( c ) \cdot P(f_1 \mid c)
 <script type="math/tex; mode=display">
 \begin{aligned}
 P(c \mid f_1, ..., f_n) &= \alpha \cdot P( c ) \cdot P(f_1 \mid c) 
-  \cdot P(f_2 \mid c) ... P(f_n \mid c)\\\\
+  \cdot P(f_2 \mid c) ... P(f_n \mid c)\\
 &= \alpha \cdot P( c ) \cdot \prod _{i=1}^{n}P(f_i \mid c)
 \end{aligned}</script><p>Therefore</p>
 <script type="math/tex; mode=display">
@@ -926,29 +926,29 @@ P(cavity \mid \hat{wash}, pain) = \alpha \cdot P( cavity ) \cdot P(\hat{wasgh} \
 </div>
 <h3 id="Naive-Bayes-classifier"><a href="#Naive-Bayes-classifier" class="headerlink" title="Naive Bayes classifier"></a>Naive Bayes classifier</h3><script type="math/tex; mode=display">
 \begin{aligned}
-&P(cavity \mid \hat{wash}, pain) \\\\
+&P(cavity \mid \hat{wash}, pain) \\
 = \quad &\alpha \cdot P( cavity ) \cdot P(\hat{wash} \mid cavity) 
-  \cdot P(pain \mid cavity) \\\\
+  \cdot P(pain \mid cavity) \\
 = \quad &\alpha \times \cfrac{3}{6} \times \cfrac{2}{3} \times \cfrac{3}{3} 
-\\\\
-= \quad &\alpha  \times \cfrac{1}{3}\\\\
+\\
+= \quad &\alpha  \times \cfrac{1}{3}\\
 = \quad &100 \%
 \end{aligned}</script><p>and</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-&P(\hat{cavity} \mid \hat{wash}, pain) \\\\
+&P(\hat{cavity} \mid \hat{wash}, pain) \\
 = \quad &\alpha \cdot P( \hat{cavity} ) \cdot P(\hat{wash} \mid \hat{cavity}) 
-  \cdot P(pain \mid \hat{cavity}) \\\\
+  \cdot P(pain \mid \hat{cavity}) \\
 = \quad &\alpha \times \cfrac{3}{6} \times \cfrac{1}{3} \times \cfrac{0}{3} 
-\\\\
-= \quad &\alpha  \times 0\\\\
+\\
+= \quad &\alpha  \times 0\\
 = \quad &0 \%
 \end{aligned}</script><p>Where</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \alpha &=\cfrac{1}
 {P(cavity) \cdot P(\hat{wash}\mid cavity)\cdot P(pain\mid cavity) 
-+ P(\hat{cavity})\cdot P(\hat{wash}\mid \hat{cavity})\cdot P(pain\mid \hat{cavity})} \\\\ &=3
++ P(\hat{cavity})\cdot P(\hat{wash}\mid \hat{cavity})\cdot P(pain\mid \hat{cavity})} \\ &=3
 \end{aligned}</script><h2 id="Categorical-naive-Bayes"><a href="#Categorical-naive-Bayes" class="headerlink" title="Categorical naive Bayes"></a>Categorical naive Bayes</h2><p><strong>Categorical naive Bayes</strong>: all the input attributes are categorical variables.</p>
 <ul>
 <li>A categorical variable is a variable that can take on one of a limited number of possible values</li>
@@ -1212,8 +1212,8 @@ P(cavity \mid \hat{wash}, pain) = \alpha \cdot P( cavity ) \cdot P(\hat{wasgh} \
 \mu = \cfrac{40 + 35 + 60}{3} = 45</script><script type="math/tex; mode=display">
 \begin{aligned}
 \sigma ^2 &= \cfrac{1}{3} \times
-[(40-45)^2 + (35-45)^2 + (60-45)^2] \\\\
-&= \cfrac{1}{3} \times [25 + 100 + 225] \\\\
+[(40-45)^2 + (35-45)^2 + (60-45)^2] \\
+&= \cfrac{1}{3} \times [25 + 100 + 225] \\
 &\approx 116.67
 \end{aligned}</script><p>Use $\mu$ and $\sigma$ to plot the Gaussian distribution graph:</p>
 <p>Sugar is $x$ and $P(Sugar\mid cavity)$ is $N(x \mid \mu, \sigma)$.</p>
@@ -1345,13 +1345,13 @@ N(x \mid \mu, \sigma) = \cfrac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x-\mu)^2}{2\si
 </div>
 <script type="math/tex; mode=display">
 \begin{aligned}
-&P(cavity \mid \hat{wash}, Sugar=20)\\\\= \quad 
-& \alpha \cdot P(cavity) \cdot P(\hat{wash} \mid cavity) \cdot P(Sugar = 20 \mid cavity) \\\\= \quad 
+&P(cavity \mid \hat{wash}, Sugar=20)\\= \quad 
+& \alpha \cdot P(cavity) \cdot P(\hat{wash} \mid cavity) \cdot P(Sugar = 20 \mid cavity) \\= \quad 
 & \alpha \times \cfrac{3}{6} \times \cfrac{2}{3} \times P(Sugar = 20 \mid cavity)
 \end{aligned}</script><script type="math/tex; mode=display">
 \begin{aligned}
-&P(\hat{cavity} \mid \hat{wash}, Sugar=20)\\\\= \quad 
-& \alpha \cdot P(\hat{cavity}) \cdot P(\hat{wash} \mid \hat{cavity}) \cdot P(Sugar = 20 \mid \hat{cavity}) \\\\= \quad 
+&P(\hat{cavity} \mid \hat{wash}, Sugar=20)\\= \quad 
+& \alpha \cdot P(\hat{cavity}) \cdot P(\hat{wash} \mid \hat{cavity}) \cdot P(Sugar = 20 \mid \hat{cavity}) \\= \quad 
 & \alpha \times \cfrac{3}{6} \times \cfrac{1}{3} \times P(Sugar = 20 \mid \hat{cavity})
 \end{aligned}</script><p>Calculate $P(Sugar=20 \mid cavity)$:</p>
 <ul>
