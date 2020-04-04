@@ -100,8 +100,10 @@
 <meta property="og:image" content="http://yoursite.com/2020/04/04/Introduction-to-AI-Naive-Bayes-and-Logic/10.png">
 <meta property="og:image" content="http://yoursite.com/2020/04/04/Introduction-to-AI-Naive-Bayes-and-Logic/11.png">
 <meta property="og:image" content="http://yoursite.com/2020/04/04/Introduction-to-AI-Naive-Bayes-and-Logic/12.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/04/Introduction-to-AI-Naive-Bayes-and-Logic/13.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/04/Introduction-to-AI-Naive-Bayes-and-Logic/14.png">
 <meta property="article:published_time" content="2020-04-04T11:27:56.020Z">
-<meta property="article:modified_time" content="2020-04-04T11:31:46.109Z">
+<meta property="article:modified_time" content="2020-04-04T15:27:03.425Z">
 <meta property="article:author" content="H Yu">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Bayes">
@@ -1395,6 +1397,563 @@ N(x \mid \mu, \sigma) = \cfrac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x-\mu)^2}{2\si
 <li><p>…</p>
 </li>
 </ul>
+<h1 id="Logic"><a href="#Logic" class="headerlink" title="Logic"></a>Logic</h1><h2 id="Outline-1"><a href="#Outline-1" class="headerlink" title="Outline"></a>Outline</h2><ul>
+<li>Propositional Logic</li>
+<li>First Order Logic</li>
+</ul>
+<h2 id="AI-Branches"><a href="#AI-Branches" class="headerlink" title="AI Branches"></a>AI Branches</h2><p><img src="/2020/04/04/Introduction-to-AI-Naive-Bayes-and-Logic/13.png" style="zoom:50%;"></p>
+<h2 id="Propositional-Logic"><a href="#Propositional-Logic" class="headerlink" title="Propositional Logic"></a>Propositional Logic</h2><ul>
+<li>A proposition is simply a statement, either true or false</li>
+<li>There is no concept of a degree of truth</li>
+<li>Propositional logic deals with logical relationships between propositions (statements, claims) taken as wholes</li>
+<li>Such letters are not variables, called propositional constant</li>
+</ul>
+<p><img src="/2020/04/04/Introduction-to-AI-Naive-Bayes-and-Logic/14.png" style="zoom:50%;"></p>
+<p><strong>P = “John is wearing a red coat”</strong></p>
+<h3 id="Compound-proposition"><a href="#Compound-proposition" class="headerlink" title="Compound proposition"></a>Compound proposition</h3><ul>
+<li><p>Compound proposition is constructed by individual propositions and connectives (logical operators)</p>
+</li>
+<li><p>P and Q (conjunction of two propositions, denoted by $\wedge$) </p>
+</li>
+<li><p>John is wearing a red coat and he’s stolen a jeep</p>
+</li>
+<li><p>P or Q (disjunction of two propositions, denoted by $\vee$) </p>
+<ul>
+<li>John is at the library or he is studying</li>
+</ul>
+</li>
+<li><p>If P then Q (conditional of one proposition implying the<br>other, denoted by $\rightarrow$) </p>
+<ul>
+<li>If John is at the library, then he is preparing the exam</li>
+</ul>
+</li>
+<li><p>Not P (contradictory of the proposition, denoted by $\neg$) </p>
+<ul>
+<li>It is not the case that John is at the library</li>
+</ul>
+</li>
+</ul>
+<h3 id="Connectives"><a href="#Connectives" class="headerlink" title="Connectives"></a>Connectives</h3><ul>
+<li><p>If (A or B) then (C and not D)</p>
+<ul>
+<li>$A \vee B \rightarrow C \wedge \neg D$</li>
+</ul>
+</li>
+<li><p>Given the truth value of A, B, C, D, is this compound proposition true or false?</p>
+</li>
+</ul>
+<h3 id="Truth-table"><a href="#Truth-table" class="headerlink" title="Truth table"></a>Truth table</h3><p>A truth table shows how the truth or falsity of a compound statement depends on the truth or falsity of the individual statements from which it’s constructed.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">P</th>
+<th style="text-align:center">Q</th>
+<th style="text-align:center">P $\wedge$ Q</th>
+<th style="text-align:center">P $\vee$ Q</th>
+<th style="text-align:center">P$\rightarrow$Q</th>
+<th style="text-align:center">$\neg$P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Inclusive-exclusive-OR"><a href="#Inclusive-exclusive-OR" class="headerlink" title="Inclusive/exclusive OR"></a>Inclusive/exclusive OR</h3><ul>
+<li><p>Inclusive or: A triangle can be defined as a polygon with three sides or a polygon with three vertices</p>
+</li>
+<li><p>Exclusive or (denoted xor): The coin landed either heads or tails</p>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">P</th>
+<th style="text-align:center">Q</th>
+<th style="text-align:center">P $\vee$ Q</th>
+<th style="text-align:center">P$\bigoplus$Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Conditionals"><a href="#Conditionals" class="headerlink" title="Conditionals"></a>Conditionals</h3><ul>
+<li><p>Conditional can be thought of as an “if”statement</p>
+</li>
+<li><p>If I miss the bus, then I will be late for work</p>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">P</th>
+<th style="text-align:center">Q</th>
+<th style="text-align:center">P $\rightarrow$ Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>When a conditional is false?</strong></p>
+<p>If I study hard, then I will pass the test</p>
+<p><em>P: I study hard; Q: I pass the test</em></p>
+<ul>
+<li>Case 1: P is true, Q is true <ul>
+<li>I studied hard, I passed the test</li>
+</ul>
+</li>
+<li>Case 2: P is true, Q is false<ul>
+<li>I studied hard, I did not pass the test</li>
+</ul>
+</li>
+<li>Case 3: P is false, Q is true<ul>
+<li>I did not study hard, I passed the test</li>
+</ul>
+</li>
+<li>Case 4: P is false, Q is false<ul>
+<li>I did not study hard, I did not pass the test</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">P</th>
+<th style="text-align:center">Q</th>
+<th style="text-align:center">P $\rightarrow$ Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Biconditionals"><a href="#Biconditionals" class="headerlink" title="Biconditionals"></a>Biconditionals</h3><ul>
+<li><p>The bidirectional (denoted P $\leftrightarrow$ Q) implies in both directions</p>
+</li>
+<li><p>“(If P then Q) and (If Q then P)” </p>
+</li>
+<li><p>P iff Q (is read P if and only if Q)</p>
+</li>
+<li><p>(During the day) The sun is shining iff there are no clouds covering the sun</p>
+</li>
+<li><p>If I have a pet goat, then my homework will be eaten (true)</p>
+</li>
+<li><p>If my homework is eaten, then I have a pet goat (not true)</p>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">P</th>
+<th style="text-align:center">Q</th>
+<th style="text-align:center">P $\leftrightarrow$ Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Contradictories"><a href="#Contradictories" class="headerlink" title="Contradictories"></a>Contradictories</h3><ul>
+<li><p>Contradictory of P (¬P or not P): a claim that always has the opposite truth value of P</p>
+</li>
+<li><p>P: “John is at the movies”</p>
+</li>
+<li><p>It can be read “it is not the case that John is at the movies”</p>
+</li>
+</ul>
+<h3 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h3><ul>
+<li><p>An argument is a set of propositions, called the premises, intended to determine the truth of another statement, called the conclusion</p>
+</li>
+<li><p>Multiple statements</p>
+</li>
+<li><p>Premises: Supporting statements</p>
+</li>
+<li><p>Conclusion: Statement that follows from premises</p>
+<ul>
+<li>$P \leftrightarrow Q$</li>
+<li>$\cfrac{Q}{\therefore P}$</li>
+</ul>
+</li>
+<li><p>P: The river is flooded; Q: It rained heavily</p>
+</li>
+</ul>
+<h3 id="Validity"><a href="#Validity" class="headerlink" title="Validity"></a>Validity</h3><ul>
+<li>An argument is valid if the premises lead to the conclusion presented</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&P \leftrightarrow Q \\\\
+&\quad \quad \quad \quad \quad \quad \Leftarrow Invalid \: argument \\\\
+&\cfrac{Q}{\therefore P}
+\end{aligned}</script><ul>
+<li>P: I run Marathon, Q: I am exhausted</li>
+</ul>
+<h3 id="Soundness"><a href="#Soundness" class="headerlink" title="Soundness"></a>Soundness</h3><ul>
+<li><p>A sound argument is valid and all of its premises are true</p>
+</li>
+<li><p>A unsound argument lacks validity or truth</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&P \leftrightarrow Q \\\\
+&\quad \quad \quad \quad \quad \quad \Leftarrow Invalid \: argument \\\\
+&\cfrac{Q}{\therefore P}
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+&P: I \: am \: full \\\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \Leftarrow But \: unsound \\\\
+&Q: I \: have \: had \: lunch
+\end{aligned}</script><h3 id="Common-arguments-Valid-or-not"><a href="#Common-arguments-Valid-or-not" class="headerlink" title="Common arguments: Valid or not"></a>Common arguments: Valid or not</h3><ul>
+<li><p>$((P \rightarrow Q) \wedge Q) \therefore P$</p>
+<ul>
+<li>P implies Q and Q, therefore P</li>
+</ul>
+</li>
+<li><p>$((P \rightarrow Q) \wedge \neg Q) \therefore \neg P$</p>
+<ul>
+<li>P implies Q and not Q, therefore not P</li>
+</ul>
+</li>
+<li><p>$((P \rightarrow Q) \wedge (Q \rightarrow R)) \therefore P \rightarrow R$</p>
+<ul>
+<li>P implies Q and Q implies R, therefore P implies R</li>
+</ul>
+</li>
+<li><p>$(P \leftrightarrow Q) \therefore (P \wedge Q) \vee (\neg P \wedge \neg Q)$</p>
+<ul>
+<li>P iff Q, therefore (P and Q) or (not P and not Q) </li>
+</ul>
+</li>
+</ul>
+<h3 id="Argument-P-rightarrow-Q-wedge-Q-therefore-P"><a href="#Argument-P-rightarrow-Q-wedge-Q-therefore-P" class="headerlink" title="Argument $((P \rightarrow Q) \wedge Q) \therefore P$"></a>Argument $((P \rightarrow Q) \wedge Q) \therefore P$</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">P</th>
+<th style="text-align:center">Q</th>
+<th style="text-align:center">$P \rightarrow Q$</th>
+<th style="text-align:center">$(P \rightarrow Q) \wedge Q$</th>
+<th style="text-align:center">$((P \rightarrow Q) \wedge Q) \rightarrow P$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Not valid</strong></p>
+<h3 id="Argument-P-rightarrow-Q-wedge-neg-Q-therefore-neg-P"><a href="#Argument-P-rightarrow-Q-wedge-neg-Q-therefore-neg-P" class="headerlink" title="Argument $((P \rightarrow Q) \wedge \neg Q) \therefore \neg P$"></a>Argument $((P \rightarrow Q) \wedge \neg Q) \therefore \neg P$</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">P</th>
+<th style="text-align:center">Q</th>
+<th style="text-align:center">$P \rightarrow Q$</th>
+<th style="text-align:center">$\neg Q$</th>
+<th style="text-align:center">$(P \rightarrow Q) \wedge \neg Q$</th>
+<th style="text-align:center">$\neg P$</th>
+<th style="text-align:center">$((P \rightarrow Q) \wedge \neg Q) \rightarrow \neg P$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Valid</strong></p>
+<h2 id="First-Order-Logic"><a href="#First-Order-Logic" class="headerlink" title="First Order Logic"></a>First Order Logic</h2><ul>
+<li><p>First-order logic (aka predicate logic) is a generalisation of propositional logic</p>
+</li>
+<li><p>First-order logic is a powerful language that uses quantified variables over objects and allows the use of sentences that contain variables</p>
+</li>
+<li><p>First-order logic adds <strong>predicates</strong> and <strong>quantifiers</strong> to propositional logic</p>
+</li>
+</ul>
+<h3 id="Predicates"><a href="#Predicates" class="headerlink" title="Predicates"></a>Predicates</h3><ul>
+<li><p>“Socrates is a philosopher”</p>
+</li>
+<li><p>“Plato is a philosopher”</p>
+</li>
+<li><p>The predicate “is a philosopher” occurs in both sentences, which have a common structure “𝑥 is a philosopher”, “𝑥” can be Socrates or Plato</p>
+</li>
+<li><p>Such a sentence can be represented as Predicate(term1, term2, …); for example, philosopher(𝑥), philosopher(Socrates) </p>
+</li>
+<li><p>First-order logic uses Predicate(term1, term2…) to represent basic sentences, where terms can be variables/constants</p>
+</li>
+</ul>
+<p>—</p>
+<ul>
+<li><p>Birds fly: </p>
+<ul>
+<li>fly(birds)</li>
+</ul>
+</li>
+<li><p>John respects his parents: </p>
+<ul>
+<li>respect(John, parents) </li>
+</ul>
+</li>
+<li><p>x is greater than y: </p>
+<ul>
+<li>greater(x, y)</li>
+</ul>
+</li>
+<li><p>1 is greater than 2: </p>
+<ul>
+<li>greater(1, 2)</li>
+</ul>
+</li>
+</ul>
+<h4 id="Connectives-1"><a href="#Connectives-1" class="headerlink" title="Connectives"></a>Connectives</h4><p>We can use logic connectives on predicates</p>
+<ul>
+<li><p>$philosopher(x) \rightarrow scholar(x)$</p>
+<ul>
+<li>“x is a philosopher” implies that “x is a scholar”</li>
+</ul>
+</li>
+<li><p>$respect(John, parents) \wedge respect(John, wife)$</p>
+<ul>
+<li>“John respects his parents” and “John respects his wife”</li>
+</ul>
+</li>
+</ul>
+<h3 id="Quantifiers"><a href="#Quantifiers" class="headerlink" title="Quantifiers"></a>Quantifiers</h3><p>A quantifier turns a sentence about something having some property into a sentence about the number (quantity) of things having the property</p>
+<ul>
+<li><p>Universal quantifier is “for all” (i.e. “for every”)</p>
+<ul>
+<li>$\forall x \:\: P(x)$:  “For all x, x is P”.</li>
+<li>$\forall x \:\: philosopher(x)$:  “For all x, x is philosopher”.</li>
+</ul>
+</li>
+<li><p>Existential quantifier is “for some” (i.e. “there exists”)</p>
+<ul>
+<li>$\exists x \:\: P(x)$:  “For some x, x is P”.</li>
+<li>$\exists x \:\: philosopher(x)$:  “For some x, x is philosopher”.</li>
+</ul>
+</li>
+<li><p>Universal quantifier</p>
+<ul>
+<li>All man drink coffee </li>
+<li>$\forall x \:\: man(x) \rightarrow drink(x, coffee)$</li>
+<li>In universal quantifier we use implication “$\rightarrow$”</li>
+</ul>
+</li>
+<li><p>Existential quantifier</p>
+<ul>
+<li>Some boys are intelligent </li>
+<li>$\exists x\:\: boys(x) \wedge intelligent(x)$</li>
+<li>In existential quantifier we use and “$\wedge$”</li>
+</ul>
+</li>
+</ul>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><ul>
+<li><p>All philosophers are scholars</p>
+<ul>
+<li>For all x, where “x is a philosopher” then “x is a scholar”</li>
+<li>$\forall x\:\: philosopher(x) \rightarrow scholar(x)$</li>
+</ul>
+</li>
+<li><p>Every man respects his parents </p>
+<ul>
+<li>$\forall x\:\: man(x) \rightarrow respect(x, parents)$</li>
+</ul>
+</li>
+<li><p>Some boys play football</p>
+<ul>
+<li>$\exists x\:\: boy(x) \wedge play(x, football)$</li>
+</ul>
+</li>
+<li><p>Not all students like both mathematics and science</p>
+<ul>
+<li>$\neg \forall x\:\: [student(x) \rightarrow like(x, mathematics) ∧ like(x, science)]$</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -1538,7 +2097,7 @@ N(x \mid \mu, \sigma) = \cfrac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x-\mu)^2}{2\si
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1594,7 +2153,7 @@ N(x \mid \mu, \sigma) = \cfrac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x-\mu)^2}{2\si
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bayes-Theorem-and-Naive-Bayes"><span class="nav-number">1.</span> <span class="nav-text">Bayes Theorem and Naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Outline"><span class="nav-number">1.1.</span> <span class="nav-text">Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes-Theorem-everywhere-in-our-life"><span class="nav-number">1.2.</span> <span class="nav-text">Bayes Theorem everywhere in our life</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability"><span class="nav-number">1.3.</span> <span class="nav-text">Probability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-variables"><span class="nav-number">1.4.</span> <span class="nav-text">Random variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability-of-multiple-random-variables"><span class="nav-number">1.5.</span> <span class="nav-text">Probability of multiple random variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-Probability"><span class="nav-number">1.6.</span> <span class="nav-text">Conditional Probability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Calculating-a-conditional-probability-without-the-joint-probability"><span class="nav-number">1.6.1.</span> <span class="nav-text">Calculating a conditional probability without the joint probability</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.7.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.7.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyse"><span class="nav-number">1.7.2.</span> <span class="nav-text">Analyse</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes-Theorem"><span class="nav-number">1.8.</span> <span class="nav-text">Bayes Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-2-Drug-Testing"><span class="nav-number">1.9.</span> <span class="nav-text">Example 2: Drug Testing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-1"><span class="nav-number">1.9.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyse-1"><span class="nav-number">1.9.2.</span> <span class="nav-text">Analyse</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Revisit-Drug-Testing-Extension"><span class="nav-number">1.10.</span> <span class="nav-text">Revisit Drug Testing - Extension</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-2"><span class="nav-number">1.10.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyse-2"><span class="nav-number">1.10.2.</span> <span class="nav-text">Analyse</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpretation-of-Bayes-Theorem"><span class="nav-number">1.11.</span> <span class="nav-text">Interpretation of Bayes Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes-Theorem-for-Classification"><span class="nav-number">1.12.</span> <span class="nav-text">Bayes Theorem for Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-Tooth-cavity-testing"><span class="nav-number">1.13.</span> <span class="nav-text">Example: Tooth cavity testing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyse-3"><span class="nav-number">1.13.1.</span> <span class="nav-text">Analyse</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Training-Set"><span class="nav-number">1.13.1.1.</span> <span class="nav-text">Training Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frequency-Table"><span class="nav-number">1.13.1.2.</span> <span class="nav-text">Frequency Table</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probabilities-based-on-frequency-table"><span class="nav-number">1.13.1.3.</span> <span class="nav-text">Probabilities based on frequency table</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes-Theorem-for-multiple-input-attributes"><span class="nav-number">1.14.</span> <span class="nav-text">Bayes Theorem for multiple input attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Frequency-table-of-joint-input-attributes"><span class="nav-number">1.14.1.</span> <span class="nav-text">Frequency table of joint input attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Training-Set-1"><span class="nav-number">1.14.1.1.</span> <span class="nav-text">Training Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frequency-Table-1"><span class="nav-number">1.14.1.2.</span> <span class="nav-text">Frequency Table</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Naive-Bayes"><span class="nav-number">1.15.</span> <span class="nav-text">Naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Frequency-table-of-joint-input-attributes-1"><span class="nav-number">1.15.1.</span> <span class="nav-text">Frequency table of joint input attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Training-Set-2"><span class="nav-number">1.15.1.1.</span> <span class="nav-text">Training Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frequency-Table-2"><span class="nav-number">1.15.1.2.</span> <span class="nav-text">Frequency Table</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frequency-Table-3"><span class="nav-number">1.15.1.3.</span> <span class="nav-text">Frequency Table</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Naive-Bayes-classifier"><span class="nav-number">1.15.2.</span> <span class="nav-text">Naive Bayes classifier</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Categorical-naive-Bayes"><span class="nav-number">1.16.</span> <span class="nav-text">Categorical naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Categorical-vs-Numerical-attributes"><span class="nav-number">1.16.1.</span> <span class="nav-text">Categorical vs Numerical attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Training-Set-3"><span class="nav-number">1.16.1.1.</span> <span class="nav-text">Training Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Categorical"><span class="nav-number">1.16.1.2.</span> <span class="nav-text">Categorical</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Numerical"><span class="nav-number">1.16.1.3.</span> <span class="nav-text">Numerical</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deal-with-numerical-input-attributes-by-discretising-values"><span class="nav-number">1.16.2.</span> <span class="nav-text">Deal with numerical input attributes by discretising values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-Function"><span class="nav-number">1.16.3.</span> <span class="nav-text">Probability Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-Density-Function"><span class="nav-number">1.16.4.</span> <span class="nav-text">Probability Density Function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gaussian-Distribution"><span class="nav-number">1.16.4.1.</span> <span class="nav-text">Gaussian Distribution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probability-Density-Function-calculation-for-people-having-cavity"><span class="nav-number">1.16.4.2.</span> <span class="nav-text">Probability Density Function calculation for people having cavity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probability-Density-Function-calculation-for-people-not-having-cavity"><span class="nav-number">1.16.4.3.</span> <span class="nav-text">Probability Density Function calculation for people not having cavity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probability-distribution-functions"><span class="nav-number">1.16.4.4.</span> <span class="nav-text">Probability distribution functions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#General-idea"><span class="nav-number">1.16.5.</span> <span class="nav-text">General idea</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-1"><span class="nav-number">1.17.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Result"><span class="nav-number">1.17.1.</span> <span class="nav-text">Result</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advantages-and-disadvantages-of-naive-Bayes"><span class="nav-number">1.18.</span> <span class="nav-text">Advantages and disadvantages of naive Bayes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications"><span class="nav-number">1.19.</span> <span class="nav-text">Applications</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bayes-Theorem-and-Naive-Bayes"><span class="nav-number">1.</span> <span class="nav-text">Bayes Theorem and Naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Outline"><span class="nav-number">1.1.</span> <span class="nav-text">Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes-Theorem-everywhere-in-our-life"><span class="nav-number">1.2.</span> <span class="nav-text">Bayes Theorem everywhere in our life</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability"><span class="nav-number">1.3.</span> <span class="nav-text">Probability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-variables"><span class="nav-number">1.4.</span> <span class="nav-text">Random variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability-of-multiple-random-variables"><span class="nav-number">1.5.</span> <span class="nav-text">Probability of multiple random variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-Probability"><span class="nav-number">1.6.</span> <span class="nav-text">Conditional Probability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Calculating-a-conditional-probability-without-the-joint-probability"><span class="nav-number">1.6.1.</span> <span class="nav-text">Calculating a conditional probability without the joint probability</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.7.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.7.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyse"><span class="nav-number">1.7.2.</span> <span class="nav-text">Analyse</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes-Theorem"><span class="nav-number">1.8.</span> <span class="nav-text">Bayes Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-2-Drug-Testing"><span class="nav-number">1.9.</span> <span class="nav-text">Example 2: Drug Testing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-1"><span class="nav-number">1.9.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyse-1"><span class="nav-number">1.9.2.</span> <span class="nav-text">Analyse</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Revisit-Drug-Testing-Extension"><span class="nav-number">1.10.</span> <span class="nav-text">Revisit Drug Testing - Extension</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-2"><span class="nav-number">1.10.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyse-2"><span class="nav-number">1.10.2.</span> <span class="nav-text">Analyse</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpretation-of-Bayes-Theorem"><span class="nav-number">1.11.</span> <span class="nav-text">Interpretation of Bayes Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes-Theorem-for-Classification"><span class="nav-number">1.12.</span> <span class="nav-text">Bayes Theorem for Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-Tooth-cavity-testing"><span class="nav-number">1.13.</span> <span class="nav-text">Example: Tooth cavity testing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyse-3"><span class="nav-number">1.13.1.</span> <span class="nav-text">Analyse</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Training-Set"><span class="nav-number">1.13.1.1.</span> <span class="nav-text">Training Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frequency-Table"><span class="nav-number">1.13.1.2.</span> <span class="nav-text">Frequency Table</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probabilities-based-on-frequency-table"><span class="nav-number">1.13.1.3.</span> <span class="nav-text">Probabilities based on frequency table</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes-Theorem-for-multiple-input-attributes"><span class="nav-number">1.14.</span> <span class="nav-text">Bayes Theorem for multiple input attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Frequency-table-of-joint-input-attributes"><span class="nav-number">1.14.1.</span> <span class="nav-text">Frequency table of joint input attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Training-Set-1"><span class="nav-number">1.14.1.1.</span> <span class="nav-text">Training Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frequency-Table-1"><span class="nav-number">1.14.1.2.</span> <span class="nav-text">Frequency Table</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Naive-Bayes"><span class="nav-number">1.15.</span> <span class="nav-text">Naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Frequency-table-of-joint-input-attributes-1"><span class="nav-number">1.15.1.</span> <span class="nav-text">Frequency table of joint input attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Training-Set-2"><span class="nav-number">1.15.1.1.</span> <span class="nav-text">Training Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frequency-Table-2"><span class="nav-number">1.15.1.2.</span> <span class="nav-text">Frequency Table</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Frequency-Table-3"><span class="nav-number">1.15.1.3.</span> <span class="nav-text">Frequency Table</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Naive-Bayes-classifier"><span class="nav-number">1.15.2.</span> <span class="nav-text">Naive Bayes classifier</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Categorical-naive-Bayes"><span class="nav-number">1.16.</span> <span class="nav-text">Categorical naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Categorical-vs-Numerical-attributes"><span class="nav-number">1.16.1.</span> <span class="nav-text">Categorical vs Numerical attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Training-Set-3"><span class="nav-number">1.16.1.1.</span> <span class="nav-text">Training Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Categorical"><span class="nav-number">1.16.1.2.</span> <span class="nav-text">Categorical</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Numerical"><span class="nav-number">1.16.1.3.</span> <span class="nav-text">Numerical</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deal-with-numerical-input-attributes-by-discretising-values"><span class="nav-number">1.16.2.</span> <span class="nav-text">Deal with numerical input attributes by discretising values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-Function"><span class="nav-number">1.16.3.</span> <span class="nav-text">Probability Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-Density-Function"><span class="nav-number">1.16.4.</span> <span class="nav-text">Probability Density Function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gaussian-Distribution"><span class="nav-number">1.16.4.1.</span> <span class="nav-text">Gaussian Distribution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probability-Density-Function-calculation-for-people-having-cavity"><span class="nav-number">1.16.4.2.</span> <span class="nav-text">Probability Density Function calculation for people having cavity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probability-Density-Function-calculation-for-people-not-having-cavity"><span class="nav-number">1.16.4.3.</span> <span class="nav-text">Probability Density Function calculation for people not having cavity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Probability-distribution-functions"><span class="nav-number">1.16.4.4.</span> <span class="nav-text">Probability distribution functions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#General-idea"><span class="nav-number">1.16.5.</span> <span class="nav-text">General idea</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-1"><span class="nav-number">1.17.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Result"><span class="nav-number">1.17.1.</span> <span class="nav-text">Result</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advantages-and-disadvantages-of-naive-Bayes"><span class="nav-number">1.18.</span> <span class="nav-text">Advantages and disadvantages of naive Bayes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications"><span class="nav-number">1.19.</span> <span class="nav-text">Applications</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logic"><span class="nav-number">2.</span> <span class="nav-text">Logic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Outline-1"><span class="nav-number">2.1.</span> <span class="nav-text">Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AI-Branches"><span class="nav-number">2.2.</span> <span class="nav-text">AI Branches</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Propositional-Logic"><span class="nav-number">2.3.</span> <span class="nav-text">Propositional Logic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compound-proposition"><span class="nav-number">2.3.1.</span> <span class="nav-text">Compound proposition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Connectives"><span class="nav-number">2.3.2.</span> <span class="nav-text">Connectives</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Truth-table"><span class="nav-number">2.3.3.</span> <span class="nav-text">Truth table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inclusive-exclusive-OR"><span class="nav-number">2.3.4.</span> <span class="nav-text">Inclusive&#x2F;exclusive OR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditionals"><span class="nav-number">2.3.5.</span> <span class="nav-text">Conditionals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Biconditionals"><span class="nav-number">2.3.6.</span> <span class="nav-text">Biconditionals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contradictories"><span class="nav-number">2.3.7.</span> <span class="nav-text">Contradictories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Arguments"><span class="nav-number">2.3.8.</span> <span class="nav-text">Arguments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Validity"><span class="nav-number">2.3.9.</span> <span class="nav-text">Validity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Soundness"><span class="nav-number">2.3.10.</span> <span class="nav-text">Soundness</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-arguments-Valid-or-not"><span class="nav-number">2.3.11.</span> <span class="nav-text">Common arguments: Valid or not</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Argument-P-rightarrow-Q-wedge-Q-therefore-P"><span class="nav-number">2.3.12.</span> <span class="nav-text">Argument $((P \rightarrow Q) \wedge Q) \therefore P$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Argument-P-rightarrow-Q-wedge-neg-Q-therefore-neg-P"><span class="nav-number">2.3.13.</span> <span class="nav-text">Argument $((P \rightarrow Q) \wedge \neg Q) \therefore \neg P$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Order-Logic"><span class="nav-number">2.4.</span> <span class="nav-text">First Order Logic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Predicates"><span class="nav-number">2.4.1.</span> <span class="nav-text">Predicates</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Connectives-1"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">Connectives</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quantifiers"><span class="nav-number">2.4.2.</span> <span class="nav-text">Quantifiers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples"><span class="nav-number">2.4.3.</span> <span class="nav-text">Examples</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
